@@ -12,7 +12,7 @@ S = "${WORKDIR}/git"
 
 DEPENDS = "glib-2.0"
 EXTRA_OECONF  = "--with-syslog --with-glib --without-cutils --with-dummy_diag --with-qcom --with-audio_dma_support"
-EXTRA_OECONF += "--without-ats_transport_tcp_ip"
+EXTRA_OECONF += "--without-ats_transport_tcp_ip --without-ats_data_logging"
 EXTRA_OECONF += " --with-sanitized-headers=${STAGING_KERNEL_DIR}/include/uapi/sound/qcom"
 CFLAGS += "-Wno-int-conversion"
 
