@@ -5,7 +5,9 @@ After=adbd.service
 [Service]
 # Note that notify will only work if --daemonize=no
 Type=notify
-ExecStart=/usr/bin/pulseaudio --system --daemonize=no -v
+User = root
+Group = root
+ExecStart=/usr/bin/pulseaudio -n --file=/etc/pulse/system.pa --daemonize=no -v
 Restart=on-failure
 RestartSec=3
 StateDirectory=pulse
