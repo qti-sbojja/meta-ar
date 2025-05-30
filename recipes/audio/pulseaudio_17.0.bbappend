@@ -31,12 +31,6 @@ do_install:append:qcom() {
     done
 }
 
-USERADD_PACKAGES = "${PN}-server"
-GROUPADD_PARAM:pulseaudio-server = "-g 5020 pulse"
-USERADD_PARAM:pulseaudio-server = "--system --home /var/run/pulse \
-                              --no-create-home --shell /bin/false \
-                              --groups audio,pulse,input,plugdev,kmem --gid pulse pulse"
-
 SYSTEMD_PACKAGES = "${PN}-server"
 
 PACKAGES =+ "libpulsecore-dev"
