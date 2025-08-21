@@ -53,9 +53,6 @@ runs:
           bash -c "
             set -e
             kas shell meta-ar/ci/${{ inputs.kas_file }} -c '
-              cd ../meta-qcom
-              git fetch https://github.com/qualcomm-linux/meta-qcom.git 78f13cf900b6df8176cbe722576aebbdf9a4d70d && git cherry-pick FETCH_HEAD
-              cd ../build
               umask 022
               # Flat build or generate sdk build
               ${{ inputs.build_command }}
