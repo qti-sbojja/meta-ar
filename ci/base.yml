@@ -30,6 +30,13 @@ repos:
   meta-qcom:
     url: https://github.com/qualcomm-linux/meta-qcom.git
 
+  meta-openembedded:
+    url: https://github.com/openembedded/meta-openembedded
+    layers:
+      meta-multimedia:
+      meta-oe:
+      meta-python:
+
   meta-ar:
     path: meta-ar
 
