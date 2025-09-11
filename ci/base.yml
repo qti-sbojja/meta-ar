@@ -49,11 +49,9 @@ local_conf_header:
     INHERIT += "buildhistory"
     INHERIT += "rm_work"
     IMAGE_INSTALL:append = "packagegroup-qcom-audio"
-    MACHINE_ESSENTIAL_EXTRA_RDEPENDS:append = "packagegroup-qcom-audio-kernel-modules"
   qcomflash: |
     IMAGE_CLASSES += "image_types_qcom"
     IMAGE_FSTYPES += "qcomflash"
-    TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
   extra: |
     DISTRO_FEATURES:append = " efi pni-names"
     EXTRA_IMAGE_FEATURES = "allow-empty-password empty-root-password allow-root-login"
