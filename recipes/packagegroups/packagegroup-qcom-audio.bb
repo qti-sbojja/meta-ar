@@ -18,4 +18,6 @@ RDEPENDS:${PN} = ' \
     audioreach-graphmgr \
     audioreach-graphservices \
     audioreach-pal \
+    audioreach-pipewire-plugin \
+    audioreach-dlkm \
 '
