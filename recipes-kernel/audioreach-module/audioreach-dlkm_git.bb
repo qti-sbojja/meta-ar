@@ -6,6 +6,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=0a5a2ad232bafb6974f9a29d1ba0f488"
 
 SRC_URI = "git://github.com/AudioReach/audioreach-kernel.git;protocol=https;branch=master \
            file://audioreach.rules \
+           file://asoc-blacklist.conf \
     "
 SRCREV = "c494af74e420661591a3715f02e4f21f4944a0f2"
 
@@ -20,9 +21,12 @@ MODULES_MODULE_SYMVERS_LOCATION = "audioreach-driver"
 do_install:append() {
     install -d ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${UNPACKDIR}/audioreach.rules ${D}${sysconfdir}/udev/rules.d/
+    install -d ${D}${sysconfdir}/modprobe.d
+    install -m 0644 ${UNPACKDIR}/asoc-blacklist.conf ${D}${sysconfdir}/modprobe.d/
 }
 
 FILES:${PN} += "${sysconfdir}/udev/rules.d/audioreach.rules"
+FILES:${PN} += "${sysconfdir}/modprobe.d/asoc-blacklist.conf"
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:aarch64 = "(.*)"
